@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Keripik Tempe Almira - Link & Katalog Resmi</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-image: linear-gradient(rgba(255, 251, 235, 0.35), rgba(254, 243, 199, 0.45)), url('BG_WEB_Kerpiki_Tempe.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+    }
+    .card-hover {
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .card-hover:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px -5px rgba(180, 83, 9, 0.18);
+    }
+    .pulse-wa {
+      animation: pulse-green 2s infinite;
+    }
+    @keyframes pulse-green {
+      0% { box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.5); }
+      70% { box-shadow: 0 0 0 12px rgba(22, 163, 74, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(22, 163, 74, 0); }
+    }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #FEF3C7; }
+    ::-webkit-scrollbar-thumb { background: #D97706; border-radius: 999px; }
+  </style>
+</head>
+<body class="text-stone-800 antialiased pb-24">
+
+  <!-- Top Bar (Klik 3x pada lencana untuk masuk Mode Owner) -->
+  <div class="max-w-md mx-auto px-4 pt-4 flex justify-center items-center">
+    <span id="secret-owner-trigger" onclick="handleSecretTap()" class="cursor-pointer select-none text-xs font-semibold text-amber-900 bg-amber-200/80 px-3 py-1 rounded-full shadow-xs active:scale-95 transition">
+      🌿 100% Kedelai Pilihan
+    </span>
+  </div>
+  
+  <!-- Main Container -->
+  <main class="max-w-md mx-auto px-4 pt-4">
+
+    <!-- Profile Header -->
+    <header class="text-center mb-6">
+      <div class="relative inline-block mb-3">
+        <div class="w-24 h-24 rounded-full bg-gradient-to-tr from-amber-600 via-amber-500 to-yellow-300 p-1 shadow-lg mx-auto">
+          <div id="profile-avatar-container" class="w-full h-full rounded-full bg-amber-50 flex items-center justify-center overflow-hidden">
+            <img src="logo_keripik_almira.jpg" alt="Logo Keripik Tempe Almira" class="w-full h-full object-cover" onerror="this.outerHTML=defaultSVGLogo" />
+          </div>
+        </div>
+        <span class="absolute bottom-0 right-0 bg-emerald-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-full border-2 border-amber-50 shadow">
+          ✓ UMKM
+        </span>
+      </div>
+
+      <h1 id="display-name" class="text-xl font-extrabold text-stone-900 tracking-tight">
+        Keripik Tempe Almira
+      </h1>
+      <p id="display-tagline" class="text-sm text-stone-700 mt-1 leading-relaxed px-2 font-medium">
+        Renyah, tipis, bumbu rempah meresap & tidak berminyak. Produksi fresh setiap hari!
+      </p>
+
+      <!-- Trust Badges -->
+      <div class="grid grid-cols-4 gap-1.5 mt-4 bg-white/85 backdrop-blur-sm p-2.5 rounded-2xl border border-amber-200/80 shadow-sm">
+        <div class="text-center">
+          <div class="text-sm font-extrabold text-amber-700">100%</div>
+          <div class="text-[10px] text-stone-500 font-medium">Halal & Higienis</div>
+        </div>
+        <div class="text-center border-l border-amber-200">
+          <div class="text-sm font-extrabold text-amber-700">Fresh</div>
+          <div class="text-[10px] text-stone-500 font-medium">Goreng Tiap Hari</div>
+        </div>
+        <div class="text-center border-l border-amber-200">
+          <div class="text-sm font-extrabold text-amber-700">Tipis</div>
+          <div class="text-[10px] text-stone-500 font-medium">Tidak Keras</div>
+        </div>
+        <div class="text-center border-l border-amber-200">
+          <div class="text-sm font-extrabold text-amber-700">Kirim</div>
+          <div class="text-[10px] text-stone-500 font-medium">Seluruh Indo</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <div class="flex bg-white/70 backdrop-blur-xs p-1 rounded-2xl mb-5 border border-amber-200/60">
+      <button id="tab-links" onclick="switchTab('links')" class="flex-1 py-2 text-xs font-bold rounded-xl bg-white text-amber-900 shadow-sm transition">
+        🔗 Tautan & Order Cepat
+      </button>
+      <button id="tab-catalog" onclick="switchTab('catalog')" class="flex-1 py-2 text-xs font-bold rounded-xl text-stone-600 hover:text-stone-900 transition">
+        🛒 Katalog & Hitung Order
+      </button>
+    </div>
+
+    <!-- TAB 1: LINKTREE-STYLE LINKS -->
+    <section id="section-links" class="space-y-3">
+
+      <!-- Primary CTA: WhatsApp -->
+      <a id="link-wa-direct" href="#" target="_blank" class="card-hover pulse-wa block w-full bg-gradient-to-r from-emerald-600 to-green-600 text-white p-4 rounded-2xl shadow-md">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3.5">
+            <div class="w-11 h-11 rounded-xl bg-white/20 flex items-center justify-center text-2xl">
+              💬
+            </div>
+            <div>
+              <div class="font-extrabold text-sm">Pesan Cepat via WhatsApp</div>
+              <div class="text-xs text-emerald-100">Fast respon • Bisa COD / Transfer</div>
+            </div>
+          </div>
+          <span class="text-xs font-bold bg-white text-emerald-700 px-2.5 py-1 rounded-full">Chat</span>
+        </div>
+      </a>
+
+      <!-- Open Catalog Shortcut -->
+      <button onclick="switchTab('catalog')" class="card-hover w-full text-left bg-amber-600 hover:bg-amber-700 text-white p-4 rounded-2xl shadow-md">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3.5">
+            <div class="w-11 h-11 rounded-xl bg-white/20 flex items-center justify-center text-2xl">
+              🛍️
+            </div>
+            <div>
+              <div class="font-extrabold text-sm">Pilih Varian Rasa & Hitung Total</div>
+              <div class="text-xs text-amber-100">Otomatis rekap pesanan ke WhatsApp</div>
+            </div>
+          </div>
+          <span class="text-lg font-bold">→</span>
+        </div>
+      </button>
+
+      <!-- Lokasi Produksi / Google Maps -->
+      <a id="link-maps" href="https://maps.app.goo.gl/9Jv7Tjp8e2R8M8hSA" target="_blank" class="card-hover block w-full bg-white hover:bg-amber-50 border border-amber-200/80 p-3.5 rounded-2xl shadow-sm">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3.5">
+            <div class="w-10 h-10 rounded-xl bg-red-100 text-red-600 flex items-center justify-center text-xl">
+              📍
+            </div>
+            <div>
+              <div class="font-bold text-sm text-stone-800">Lokasi Rumah Produksi & Outlet</div>
+              <div id="display-address" class="text-xs text-stone-500">Buka setiap hari Senin - Sabtu 24 jam</div>
+            </div>
+          </div>
+          <span class="text-stone-400 text-sm">↗</span>
+        </div>
+      </a>
+
+      <!-- Testimoni Singkat -->
+      <div class="bg-white/95 border border-amber-200/80 rounded-2xl p-4 mt-4 shadow-sm">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs font-extrabold text-amber-900 uppercase tracking-wider">⭐ Kata Pelanggan Kami</span>
+          <span class="text-xs font-bold text-amber-600">4.9 / 5.0</span>
+        </div>
+        <p class="text-xs text-stone-600 italic leading-relaxed">
+          "Keripik tempenya tipis banget, daun jeruknya wangi dan nggak serik di tenggorokan. Sekali buka bungkus langsung ludes!"
+        </p>
+        <div class="text-[11px] font-bold text-stone-500 mt-1.5">— Rina S., Pelanggan Repeat Order</div>
+      </div>
+
+    </section>
+
+    <!-- TAB 2: KATALOG PRODUK & KERANJANG WHATSAPP -->
+    <section id="section-catalog" class="hidden space-y-3">
+      <div class="bg-amber-100/90 border border-amber-300 rounded-xl p-3 text-xs text-amber-900 flex items-center justify-between">
+        <span>Pilih jumlah bungkus, lalu klik tombol kirim pesanan di bawah.</span>
+      </div>
+
+      <!-- Product List Container -->
+      <div id="product-list" class="space-y-3"></div>
+
+      <!-- Form Data Pemesan -->
+      <div class="bg-white border border-amber-200 rounded-2xl p-4 shadow-sm space-y-3 mt-4">
+        <h3 class="text-sm font-extrabold text-stone-800">📋 Data Pengiriman</h3>
+        <div>
+          <label class="block text-xs font-semibold text-stone-600 mb-1">Nama Pemesan</label>
+          <input id="cust-name" type="text" placeholder="Contoh: Budi Santoso" class="w-full text-sm px-3 py-2 rounded-xl border border-stone-200 focus:outline-none focus:border-amber-500" />
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-stone-600 mb-1">Alamat Lengkap / Kota Tujuan</label>
+          <textarea id="cust-address" rows="2" placeholder="Contoh: Jl. Melati No. 12, Kec. Lowokwaru, Malang" class="w-full text-sm px-3 py-2 rounded-xl border border-stone-200 focus:outline-none focus:border-amber-500"></textarea>
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-stone-600 mb-1">Metode Pengiriman</label>
+          <select id="cust-shipping" class="w-full text-sm px-3 py-2 rounded-xl border border-stone-200 focus:outline-none focus:border-amber-500 bg-white">
+            <option value="Ekspedisi Reguler (J&T / JNE / SiCepat)">Ekspedisi Reguler (J&T / JNE / SiCepat)</option>
+            <option value="Kurir Instan / Ojek Online">Kurir Instan / Ojek Online</option>
+            <option value="Ambil Sendiri di Rumah Produksi">Ambil Sendiri di Rumah Produksi</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social Media Footer -->
+    <footer class="mt-8 text-center">
+      <div class="flex justify-center items-center gap-3 mb-3">
+        <!-- Instagram -->
+        <a id="link-ig" href="https://www.instagram.com/keripik_sagu_almira?fqnt=MWpnbTM5NnF6NGJvcw==" target="_blank" aria-label="Instagram" class="w-10 h-10 rounded-full bg-white border border-amber-200 flex items-center justify-center text-pink-600 hover:bg-pink-50 hover:scale-105 transition shadow-xs">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </a>
+
+        <!-- TikTok -->
+        <a id="link-tiktok" href="https://www.tiktok.com/@keripiksagu2?_d=secCgYIASAHKAESPgo8li7mIxbm%2FZxrt%2F5FBqhM89grsiraxyWy1i7HoqH3NUeNfs3JYGxnbSYThA3DOipELZnwJPgkedzdREyvGgA%3D&_r=1&object_id=7152724527091778561&page_open_method=scan_code&schema_type=4&sec_uid=MS4wLjABAAAA8XI9yI04xhhr1VYjCqaNSVmEWkx2jdXP17YB4WvlwgkO8ypV_NJ2_a6ravxCseJd&share_app_id=1180&share_author_id=7152724527091778561&share_uid=6909278932006290433&tt_from=scan_code&utm_campaign=client_scan_code&utm_medium=2&utm_source=scan_code" target="_blank" aria-label="TikTok" class="w-10 h-10 rounded-full bg-white border border-amber-200 flex items-center justify-center text-stone-900 hover:bg-stone-100 hover:scale-105 transition shadow-xs">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+          </svg>
+        </a>
+
+        <!-- Facebook -->
+        <a id="link-facebook" href="https://www.facebook.com/share/1cTs948pUx/" target="_blank" aria-label="Facebook" class="w-10 h-10 rounded-full bg-white border border-amber-200 flex items-center justify-center text-blue-600 hover:bg-blue-50 hover:scale-105 transition shadow-xs">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
+          </svg>
+        </a>
+
+        <!-- Bagikan Link -->
+        <button onclick="shareLink()" class="px-4 h-10 rounded-full bg-white border border-amber-200 flex items-center justify-center text-stone-700 hover:bg-amber-100 hover:scale-105 transition text-xs font-bold gap-1.5 shadow-xs">
+          <svg class="w-4 h-4 text-amber-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+          </svg>
+          Bagikan Link
+        </button>
+      </div>
+      <p class="text-[11px] text-stone-600 font-medium bg-white/80 inline-block px-3 py-1 rounded-full">
+        © <span id="footer-year"></span> <span id="footer-name">Keripik Tempe Almira</span>
+      </p>
+    </footer>
+  </main>
+
+  <!-- Floating Checkout Bar -->
+  <div id="checkout-bar" class="hidden fixed bottom-0 left-0 right-0 bg-white border-t border-amber-200 shadow-2xl p-3 z-40">
+    <div class="max-w-md mx-auto flex items-center justify-between gap-3">
+      <div>
+        <div class="text-[11px] text-stone-500 font-medium"><span id="cart-count">0</span> bungkus dipilih</div>
+        <div class="text-base font-extrabold text-amber-700" id="cart-total">Rp 0</div>
+      </div>
+      <button onclick="checkoutWhatsApp()" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs px-4 py-3 rounded-xl shadow flex items-center gap-2 transition">
+        <span>Kirim Order ke WA</span>
+        <span>→</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- MODAL: OWNER MODE (CLOUD SYNC) -->
+  <div id="owner-modal" class="hidden fixed inset-0 bg-black/70 backdrop-blur-xs z-50 flex items-center justify-center p-3 overflow-y-auto">
+    <div class="bg-white rounded-3xl max-w-md w-full p-5 shadow-2xl my-auto max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between border-b border-stone-100 pb-3 mb-4">
+        <div>
+          <h3 class="text-base font-extrabold text-stone-900">⚙️ Pengaturan Toko (Online Sync)</h3>
+          <p class="text-[11px] text-emerald-700 font-semibold">Perubahan langsung tampil di HP semua pelanggan!</p>
+        </div>
+        <button onclick="closeOwnerModal()" class="w-8 h-8 rounded-full bg-stone-100 text-stone-600 font-bold">✕</button>
+      </div>
+
+      <div class="space-y-3 text-xs">
+        <!-- Upload Foto Profil -->
+        <div class="p-3 bg-amber-50/70 border border-amber-200 rounded-2xl">
+          <label class="font-extrabold text-amber-900 block mb-2">🖼️ Foto Profil / Logo UMKM</label>
+          <div class="flex items-center gap-3">
+            <div id="owner-avatar-preview" class="w-14 h-14 rounded-full bg-white border border-amber-300 flex items-center justify-center overflow-hidden shrink-0 text-lg">
+              🍘
+            </div>
+            <div class="flex-1 space-y-1.5">
+              <label class="inline-block cursor-pointer bg-amber-600 hover:bg-amber-700 text-white font-bold px-3 py-1.5 rounded-lg text-[11px] transition">
+                📁 Pilih Foto dari Galeri
+                <input type="file" accept="image/*" onchange="handleProfileImageUpload(event)" class="hidden" />
+              </label>
+              <button type="button" onclick="resetProfileImage()" class="ml-1 text-[11px] text-stone-500 underline hover:text-red-600">
+                Reset Default
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <label class="font-bold text-stone-700 block mb-1">Nama Usaha / Brand</label>
+          <input id="edit-name" type="text" class="w-full px-3 py-2 rounded-xl border border-stone-300" />
+        </div>
+        <div>
+          <label class="font-bold text-stone-700 block mb-1">Deskripsi Singkat (Tagline)</label>
+          <textarea id="edit-tagline" rows="2" class="w-full px-3 py-2 rounded-xl border border-stone-300"></textarea>
+        </div>
+        <div>
+          <label class="font-bold text-stone-700 block mb-1">Nomor WhatsApp (Awali dengan 62)</label>
+          <input id="edit-wa" type="text" placeholder="6285234644175" class="w-full px-3 py-2 rounded-xl border border-stone-300" />
+        </div>
+        <div class="grid grid-cols-2 gap-2">
+          <div>
+            <label class="font-bold text-stone-700 block mb-1">Link Google Maps</label>
+            <input id="edit-maps" type="text" class="w-full px-3 py-2 rounded-xl border border-stone-300" />
+          </div>
+          <div>
+            <label class="font-bold text-stone-700 block mb-1">Alamat / Jam Buka</label>
+            <input id="edit-address" type="text" class="w-full px-3 py-2 rounded-xl border border-stone-300" />
+          </div>
+        </div>
+
+        <!-- Daftar Varian -->
+        <div class="pt-2 border-t border-stone-200">
+          <div class="flex items-center justify-between mb-2">
+            <label class="font-extrabold text-stone-800">Daftar Varian & Foto Produk</label>
+            <button onclick="addNewProductRow()" class="text-[11px] font-bold bg-amber-100 text-amber-800 px-2.5 py-1 rounded-lg">+ Tambah Varian</button>
+          </div>
+          <div id="edit-products-container" class="space-y-2.5"></div>
+        </div>
+      </div>
+
+      <div class="mt-5 pt-3 border-t border-stone-200">
+        <button id="btn-save-cloud" onclick="saveOwnerSettingsToCloud()" class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs shadow-md transition">
+          ☁️ Simpan & Publikasikan ke Semua HP
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // =========================================================================
+    // TEMPEL URL FIREBASE REALTIME DATABASE ANDA DI BAWAH INI (tanpa "/" di akhir)
+    // Contoh: "https://keripik-tempe-almira-default-rtdb.asia-southeast1.firebasedatabase.app"
+    // =========================================================================
+    const FIREBASE_DB_URL = "https://almira-671a3-default-rtdb.firebaseio.com/";
+
+    // PIN Rahasia Owner
+    const OWNER_PIN = "almira";
+    let tapCount = 0;
+    let tapTimer = null;
+
+    // Data cadangan awal sebelum database diisi
+    const defaultData = {
+      name: "Keripik Tempe Almira",
+      tagline: "Renyah, tipis, bumbu rempah meresap & tidak berminyak. Produksi fresh setiap hari!",
+      profileImage: "logo_keripik_almira.jpg",
+      wa: "6285234644175",
+      maps: "https://maps.app.goo.gl/9Jv7Tjp8e2R8M8hSA",
+      address: "Buka setiap hari Senin - Sabtu 24 jam",
+      products: [
+        { id: 1, name: "Original Daun Jeruk (150g)", desc: "Gurih ketumbar & aroma daun jeruk segar", price: 15000, badge: "Terlaris", image: "" },
+        { id: 2, name: "Pedas Daun Jeruk (150g)", desc: "Pedas nampol cabai asli + daun jeruk", price: 16000, badge: "Favorit", image: "" },
+        { id: 3, name: "Balado Pedas Manis (150g)", desc: "Bumbu balado melimpah, cocok segala usia", price: 16000, badge: "", image: "" },
+        { id: 4, name: "Keju Asin Gurih (150g)", desc: "Taburan keju premium yang lumer di mulut", price: 17000, badge: "", image: "" },
+        { id: 5, name: "Paket Hemat 5 Bungkus", desc: "Bebas pilih rasa (tulis di catatan WA)", price: 72000, badge: "Hemat", image: "" }
+      ]
+    };
+
+    let storeData = defaultData;
+    let tempProfileImage = storeData.profileImage || "logo_keripik_almira.jpg";
+    let cart = {};
+
+    const defaultSVGLogo = `
+      <svg viewBox="0 0 100 100" class="w-16 h-16">
+        <circle cx="50" cy="50" r="44" fill="#FDE68A" />
+        <rect x="24" y="28" width="52" height="44" rx="10" transform="rotate(-8 50 50)" fill="#D97706" />
+        <rect x="26" y="30" width="48" height="40" rx="8" transform="rotate(-8 50 50)" fill="#F59E0B" />
+        <circle cx="38" cy="42" r="4" fill="#FEF3C7" />
+        <circle cx="52" cy="39" r="4.5" fill="#FEF3C7" />
+        <circle cx="64" cy="44" r="3.5" fill="#FEF3C7" />
+        <circle cx="35" cy="55" r="4" fill="#FEF3C7" />
+        <circle cx="49" cy="53" r="4.5" fill="#FEF3C7" />
+        <circle cx="62" cy="57" r="4" fill="#FEF3C7" />
+        <path d="M65 22 C78 16, 86 28, 72 36 C65 32, 62 26, 65 22 Z" fill="#15803D" />
+      </svg>
+    `;
+
+    // Ambil data terbaru dari Cloud Firebase saat halaman dibuka oleh siapa pun
+    async function loadStoreFromCloud() {
+      renderApp(); // Tampilkan data awal langsung agar tidak blank
+      if (!FIREBASE_DB_URL || FIREBASE_DB_URL.includes("TEMPEL_URL")) return;
+
+      try {
+        const res = await fetch(`${FIREBASE_DB_URL}/storeData.json`);
+        if (!res.ok) return;
+        const cloudData = await res.json();
+        if (cloudData && cloudData.name) {
+          storeData = cloudData;
+          if (!storeData.products) storeData.products = [];
+          renderApp();
+        }
+      } catch (err) {
+        console.warn("Gagal memuat data cloud, memakai data default:", err);
+      }
+    }
+
+    // Simpan perubahan dari Mode Owner langsung ke Cloud Firebase
+    async function saveOwnerSettingsToCloud() {
+      if (!FIREBASE_DB_URL || FIREBASE_DB_URL.includes("TEMPEL_URL")) {
+        alert("URL Firebase belum dipasang di kode index.html!");
+        return;
+      }
+
+      const btn = document.getElementById('btn-save-cloud');
+      const originalText = btn.textContent;
+      btn.textContent = "⏳ Sedang menyimpan ke cloud...";
+      btn.disabled = true;
+
+      try {
+        const newData = collectFormData();
+        const res = await fetch(`${FIREBASE_DB_URL}/storeData.json`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(newData)
+        });
+
+        if (!res.ok) throw new Error("Gagal terhubung ke server Firebase");
+
+        storeData = newData;
+        renderApp();
+        closeOwnerModal();
+        alert("✅ Berhasil! Foto dan daftar produk terbaru sudah langsung tampil di semua HP & perangkat.");
+      } catch (e) {
+        alert("❌ Gagal menyimpan ke cloud. Periksa koneksi internet atau pastikan aturan Firebase masih dalam Test Mode.");
+      } finally {
+        btn.textContent = originalText;
+        btn.disabled = false;
+      }
+    }
+
+    // Deteksi klik 3x pada lencana atas
+    function handleSecretTap() {
+      tapCount++;
+      clearTimeout(tapTimer);
+      tapTimer = setTimeout(() => { tapCount = 0; }, 1500);
+
+      if (tapCount >= 3) {
+        tapCount = 0;
+        openOwnerModalWithPin();
+      }
+    }
+
+    function openOwnerModalWithPin() {
+      const inputPin = prompt("Masukkan PIN Khusus Owner:");
+      if (inputPin !== OWNER_PIN) {
+        if (inputPin !== null) alert("PIN salah! Akses khusus pemilik usaha.");
+        return;
+      }
+      document.getElementById('owner-modal').classList.remove('hidden');
+      populateOwnerForm();
+    }
+
+    function closeOwnerModal() {
+      document.getElementById('owner-modal').classList.add('hidden');
+    }
+
+    // Kompres gambar otomatis agar ringan diunggah dan cepat dibuka di HP pembeli
+    function compressImage(file, maxSize, callback) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const img = new Image();
+        img.onload = function() {
+          const canvas = document.createElement('canvas');
+          let width = img.width;
+          let height = img.height;
+
+          if (width > height) {
+            if (width > maxSize) {
+              height *= maxSize / width;
+              width = maxSize;
+            }
+          } else {
+            if (height > maxSize) {
+              width *= maxSize / height;
+              height = maxSize;
+            }
+          }
+
+          canvas.width = width;
+          canvas.height = height;
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(img, 0, 0, width, height);
+          const dataUrl = canvas.toDataURL('image/jpeg', 0.75);
+          callback(dataUrl);
+        };
+        img.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function formatRupiah(num) {
+      return 'Rp ' + Number(num).toLocaleString('id-ID');
+    }
+
+    function renderApp() {
+      document.getElementById('display-name').textContent = storeData.name;
+      document.getElementById('footer-name').textContent = storeData.name;
+      document.getElementById('footer-year').textContent = new Date().getFullYear();
+      document.getElementById('display-tagline').textContent = storeData.tagline;
+      document.getElementById('display-address').textContent = storeData.address;
+
+      const avatarContainer = document.getElementById('profile-avatar-container');
+      if (storeData.profileImage) {
+        avatarContainer.innerHTML = `<img src="${storeData.profileImage}" alt="${storeData.name}" class="w-full h-full object-cover" onerror="this.outerHTML=defaultSVGLogo" />`;
+      } else {
+        avatarContainer.innerHTML = defaultSVGLogo;
+      }
+
+      const waGreeting = encodeURIComponent(`Halo ${storeData.name}, saya tertarik memesan Keripik Tempe. Boleh info stok varian yang ready?`);
+      const waEl = document.getElementById('link-wa-direct');
+      if (waEl) waEl.href = `https://wa.me/${storeData.wa}?text=${waGreeting}`;
+
+      const mapsEl = document.getElementById('link-maps');
+      if (mapsEl) mapsEl.href = storeData.maps;
+
+      renderProducts();
+      updateCartUI();
+    }
+
+    function renderProducts() {
+      const container = document.getElementById('product-list');
+      container.innerHTML = '';
+
+      (storeData.products || []).forEach(prod => {
+        const qty = cart[prod.id] || 0;
+        const badgeHTML = prod.badge
+          ? `<span class="text-[10px] font-bold bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full">${prod.badge}</span>`
+          : '';
+
+        const imageHTML = prod.image
+          ? `<img src="${prod.image}" alt="${prod.name}" class="w-16 h-16 rounded-xl object-cover border border-amber-200 shrink-0" />`
+          : `<div class="w-16 h-16 rounded-xl bg-amber-100/70 border border-amber-200 flex items-center justify-center text-2xl shrink-0">🍘</div>`;
+
+        const card = document.createElement('div');
+        card.className = 'bg-white border border-amber-200/80 rounded-2xl p-3 shadow-sm flex items-center justify-between gap-2.5';
+        card.innerHTML = `
+          ${imageHTML}
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-1.5 flex-wrap">
+              <h4 class="font-extrabold text-sm text-stone-800 leading-tight">${prod.name}</h4>
+              ${badgeHTML}
+            </div>
+            <p class="text-xs text-stone-500 mt-0.5 line-clamp-2">${prod.desc}</p>
+            <div class="text-sm font-extrabold text-amber-700 mt-1">${formatRupiah(prod.price)}</div>
+          </div>
+          <div class="flex items-center gap-1.5 bg-amber-50 border border-amber-200 rounded-xl p-1 shrink-0">
+            <button onclick="updateQty(${prod.id}, -1)" class="w-7 h-7 rounded-lg bg-white text-stone-700 font-bold shadow-xs hover:bg-stone-100">-</button>
+            <span class="w-5 text-center text-xs font-extrabold text-stone-800">${qty}</span>
+            <button onclick="updateQty(${prod.id}, 1)" class="w-7 h-7 rounded-lg bg-amber-600 text-white font-bold shadow-xs hover:bg-amber-700">+</button>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function updateQty(id, delta) {
+      cart[id] = (cart[id] || 0) + delta;
+      if (cart[id] <= 0) delete cart[id];
+      renderProducts();
+      updateCartUI();
+    }
+
+    function updateCartUI() {
+      let totalQty = 0;
+      let totalPrice = 0;
+
+      (storeData.products || []).forEach(prod => {
+        const qty = cart[prod.id] || 0;
+        totalQty += qty;
+        totalPrice += qty * prod.price;
+      });
+
+      const bar = document.getElementById('checkout-bar');
+      if (totalQty > 0) {
+        bar.classList.remove('hidden');
+        document.getElementById('cart-count').textContent = totalQty;
+        document.getElementById('cart-total').textContent = formatRupiah(totalPrice);
+      } else {
+        bar.classList.add('hidden');
+      }
+    }
+
+    function checkoutWhatsApp() {
+      const custName = document.getElementById('cust-name').value.trim() || 'Pelanggan';
+      const custAddress = document.getElementById('cust-address').value.trim() || '-';
+      const custShipping = document.getElementById('cust-shipping').value;
+
+      let itemsText = '';
+      let totalPrice = 0;
+
+      (storeData.products || []).forEach(prod => {
+        const qty = cart[prod.id] || 0;
+        if (qty > 0) {
+          const subtotal = qty * prod.price;
+          totalPrice += subtotal;
+          itemsText += `• ${prod.name} x${qty} = ${formatRupiah(subtotal)}\n`;
+        }
+      });
+
+      const message =
+`Halo *${storeData.name}*, saya mau pesan Keripik Tempe:
+
+*Detail Pesanan:*
+${itemsText}
+*Total Produk:* ${formatRupiah(totalPrice)}
+
+*Data Pemesan:*
+Nama: ${custName}
+Alamat: ${custAddress}
+Pengiriman: ${custShipping}
+
+Mohon info total beserta ongkirnya ya. Terima kasih!`;
+
+      const waUrl = `https://wa.me/${storeData.wa}?text=${encodeURIComponent(message)}`;
+      window.open(waUrl, '_blank');
+    }
+
+    function switchTab(tab) {
+      const linksSec = document.getElementById('section-links');
+      const catalogSec = document.getElementById('section-catalog');
+      const tabLinks = document.getElementById('tab-links');
+      const tabCatalog = document.getElementById('tab-catalog');
+
+      if (tab === 'links') {
+        linksSec.classList.remove('hidden');
+        catalogSec.classList.add('hidden');
+        tabLinks.className = 'flex-1 py-2 text-xs font-bold rounded-xl bg-white text-amber-900 shadow-sm transition';
+        tabCatalog.className = 'flex-1 py-2 text-xs font-bold rounded-xl text-stone-600 hover:text-stone-900 transition';
+      } else {
+        linksSec.classList.add('hidden');
+        catalogSec.classList.remove('hidden');
+        tabCatalog.className = 'flex-1 py-2 text-xs font-bold rounded-xl bg-white text-amber-900 shadow-sm transition';
+        tabLinks.className = 'flex-1 py-2 text-xs font-bold rounded-xl text-stone-600 hover:text-stone-900 transition';
+      }
+    }
+
+    function shareLink() {
+      if (navigator.share) {
+        navigator.share({
+          title: storeData.name,
+          text: storeData.tagline,
+          url: window.location.href
+        });
+      } else {
+        navigator.clipboard.writeText(window.location.href);
+        alert('Link website berhasil disalin!');
+      }
+    }
+
+    // OWNER MODE FUNCTIONS
+    function updateOwnerAvatarPreview() {
+      const preview = document.getElementById('owner-avatar-preview');
+      if (tempProfileImage) {
+        preview.innerHTML = `<img src="${tempProfileImage}" class="w-full h-full object-cover" onerror="this.innerHTML='🍘'" />`;
+      } else {
+        preview.innerHTML = '🍘';
+      }
+    }
+
+    function handleProfileImageUpload(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      compressImage(file, 360, (dataUrl) => {
+        tempProfileImage = dataUrl;
+        updateOwnerAvatarPreview();
+      });
+    }
+
+    function resetProfileImage() {
+      tempProfileImage = defaultData.profileImage;
+      updateOwnerAvatarPreview();
+    }
+
+    function handleProductImageUpload(event, inputElem) {
+      const file = event.target.files[0];
+      if (!file) return;
+      const row = inputElem.closest('.product-edit-row');
+      compressImage(file, 360, (dataUrl) => {
+        row.dataset.image = dataUrl;
+        const thumb = row.querySelector('.prod-thumb-preview');
+        thumb.innerHTML = `<img src="${dataUrl}" class="w-full h-full object-cover" />`;
+      });
+    }
+
+    function populateOwnerForm() {
+      tempProfileImage = storeData.profileImage || "";
+      updateOwnerAvatarPreview();
+
+      document.getElementById('edit-name').value = storeData.name;
+      document.getElementById('edit-tagline').value = storeData.tagline;
+      document.getElementById('edit-wa').value = storeData.wa;
+      document.getElementById('edit-maps').value = storeData.maps;
+      document.getElementById('edit-address').value = storeData.address;
+
+      const container = document.getElementById('edit-products-container');
+      container.innerHTML = '';
+      (storeData.products || []).forEach((p) => {
+        container.appendChild(createProductEditRow(p));
+      });
+    }
+
+    function createProductEditRow(prod) {
+      const div = document.createElement('div');
+      div.className = 'p-2.5 bg-stone-50 rounded-xl border border-stone-200 space-y-2 product-edit-row';
+      div.dataset.image = prod.image || '';
+
+      const thumbContent = prod.image
+        ? `<img src="${prod.image}" class="w-full h-full object-cover" />`
+        : '🍘';
+
+      div.innerHTML = `
+        <div class="flex items-center gap-2">
+          <div class="prod-thumb-preview w-11 h-11 rounded-lg bg-amber-100 border border-amber-200 flex items-center justify-center overflow-hidden shrink-0 text-base">
+            ${thumbContent}
+          </div>
+          <div class="flex-1 space-y-1">
+            <label class="inline-block cursor-pointer bg-white border border-stone-300 hover:bg-amber-50 text-stone-700 font-bold px-2.5 py-1 rounded-lg text-[10px]">
+              📷 Pilih Foto dari Galeri
+              <input type="file" accept="image/*" onchange="handleProductImageUpload(event, this)" class="hidden" />
+            </label>
+            <button type="button" onclick="this.closest('.product-edit-row').dataset.image=''; this.closest('.product-edit-row').querySelector('.prod-thumb-preview').innerHTML='🍘';" class="ml-1 text-[10px] text-stone-400 hover:text-red-500 underline">
+              Hapus Foto
+            </button>
+          </div>
+          <button type="button" onclick="this.closest('.product-edit-row').remove()" class="px-2 py-1 bg-red-100 text-red-600 rounded-lg font-bold self-start">✕</button>
+        </div>
+        <div class="flex gap-1.5">
+          <input type="text" value="${prod.name}" placeholder="Nama Varian" class="prod-name flex-1 px-2 py-1 rounded-lg border border-stone-300 text-xs font-bold" />
+          <input type="number" value="${prod.price}" placeholder="Harga" class="prod-price w-24 px-2 py-1 rounded-lg border border-stone-300 text-xs" />
+        </div>
+        <div class="flex gap-1.5">
+          <input type="text" value="${prod.desc}" placeholder="Deskripsi rasa" class="prod-desc flex-1 px-2 py-1 rounded-lg border border-stone-300 text-xs" />
+          <input type="text" value="${prod.badge || ''}" placeholder="Label (Terlaris)" class="prod-badge w-24 px-2 py-1 rounded-lg border border-stone-300 text-xs" />
+        </div>
+      `;
+      return div;
+    }
+
+    function addNewProductRow() {
+      const container = document.getElementById('edit-products-container');
+      container.appendChild(createProductEditRow({ name: '', price: 15000, desc: '', badge: '', image: '' }));
+    }
+
+    function collectFormData() {
+      const rows = document.querySelectorAll('.product-edit-row');
+      const updatedProducts = [];
+      rows.forEach((row, index) => {
+        const name = row.querySelector('.prod-name').value.trim();
+        const price = parseInt(row.querySelector('.prod-price').value) || 0;
+        const desc = row.querySelector('.prod-desc').value.trim();
+        const badge = row.querySelector('.prod-badge').value.trim();
+        const image = row.dataset.image || '';
+        if (name) {
+          updatedProducts.push({ id: index + 1, name, price, desc, badge, image });
+        }
+      });
+
+      return {
+        ...storeData,
+        name: document.getElementById('edit-name').value.trim() || defaultData.name,
+        tagline: document.getElementById('edit-tagline').value.trim(),
+        profileImage: tempProfileImage,
+        wa: document.getElementById('edit-wa').value.trim().replace(/[^0-9]/g, ''),
+        maps: document.getElementById('edit-maps').value.trim(),
+        address: document.getElementById('edit-address').value.trim(),
+        products: updatedProducts
+      };
+    }
+
+    // Jalankan pertama kali saat halaman dibuka
+    loadStoreFromCloud();
+  </script>
+</body>
+</html>
