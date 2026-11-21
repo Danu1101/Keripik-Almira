@@ -38,7 +38,7 @@
     ::-webkit-scrollbar-thumb { background: #D97706; border-radius: 999px; }
   </style>
 </head>
-<body class="text-stone-800 antialiased pb-24">
+<body class="text-stone-800 antialiased pb-36">
 
   <!-- Top Bar (Klik 3x pada lencana untuk masuk Mode Owner) -->
   <div class="max-w-md mx-auto px-4 pt-4 flex justify-center items-center">
@@ -236,14 +236,14 @@
   </main>
 
   <!-- Floating Checkout Bar -->
-  <div id="checkout-bar" class="hidden fixed bottom-0 left-0 right-0 bg-white border-t border-amber-200 shadow-2xl p-3 z-40">
-    <div class="max-w-md mx-auto flex items-center justify-between gap-3">
+  <div id="checkout-bar" class="hidden fixed bottom-14 left-3 right-3 max-w-md mx-auto bg-white/95 backdrop-blur-md border-2 border-emerald-500 rounded-2xl shadow-2xl p-3.5 z-50">
+    <div class="flex items-center justify-between gap-3">
       <div>
-        <div class="text-[11px] text-stone-500 font-medium"><span id="cart-count">0</span> bungkus dipilih</div>
+        <div class="text-[11px] text-stone-500 font-semibold"><span id="cart-count">0</span> bungkus dipilih</div>
         <div class="text-base font-extrabold text-amber-700" id="cart-total">Rp 0</div>
       </div>
-      <button onclick="checkoutWhatsApp()" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs px-4 py-3 rounded-xl shadow flex items-center gap-2 transition">
-        <span>Kirim Order ke WA</span>
+      <button onclick="checkoutWhatsApp()" class="bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-extrabold text-xs px-5 py-3.5 rounded-xl shadow-md flex items-center gap-2 transition">
+        <span>💬 Kirim Order ke WA</span>
         <span>→</span>
       </button>
     </div>
